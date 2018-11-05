@@ -9,7 +9,7 @@ private:
 	int expForNextLevel;
 
 public:
-	Hero(std::string, int, int, int, int, int, int, int, int, int);
+	Hero(std::string, int, int, int, int, int, int, int, int);
 	int expToLevelUp();
 	void levelUp();
 };

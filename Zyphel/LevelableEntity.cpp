@@ -3,16 +3,15 @@
 
 LevelableEntity::LevelableEntity(std::string _name, int _level, 
 				int _strength, int _defense, int _speed, 
-				int _maxHealth, int _currHealth, int _critRate)
+				int _maxHealth, int _critRate) 
+	: name(_name), level(_level), strength(_strength), defense(_defense),
+	speed(_speed), maxHealth(_maxHealth), currHealth(_maxHealth), critRate(_critRate)
 {
-	name = _name;
-	level = _level;
-	strength = _strength;
-	defense = _defense;
-	speed = _speed;
-	maxHealth = _maxHealth;
-	currHealth = _currHealth;
-	critRate = _critRate;
+}
+
+bool LevelableEntity::isDead()
+{
+	return currHealth == 0;
 }
 
 std::string LevelableEntity::getName()
@@ -93,6 +92,34 @@ void LevelableEntity::setMaxHealth(int newMaxHealth)
 void LevelableEntity::setCurrHealth(int newCurrHealth)
 {
 	currHealth = newCurrHealth;
+}
+
+void LevelableEntity::takeDamage(int damage)
+{
+	if (currHealth - damage < 0) 
+	{
+		currHealth = 0;
+	}
+	else 
+	{
+		currHealth -= damage;
+	}
+}
+
+void LevelableEntity::recoverHealth(int recovery)
+{
+	if (currHealth + recovery > maxHealth) {
+		currHealth = maxHealth;
+	}
+	else 
+	{
+		currHealth += recovery;
+	}
+}
+
+void LevelableEntity::revive()
+{
+	recoverHealth(maxHealth);
 }
 
 void LevelableEntity::setCritRate(int newCritRate)

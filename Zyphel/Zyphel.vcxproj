@@ -22,10 +22,12 @@
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="Area.cpp" />
     <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="LevelableEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Area.h" />
     <ClInclude Include="Hero.h" />
+    <ClInclude Include="LevelableEntity.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

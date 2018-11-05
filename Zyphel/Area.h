@@ -7,5 +7,6 @@ private:
 	std::string name;
 
 public:
+	Area(std::string);
 	std::string getName();
 };

@@ -12,7 +12,7 @@ private:
 	int critRate;
 
 public:
-	LevelableEntity(std::string, int, int, int, int, int, int, int);
+	LevelableEntity(std::string, int, int, int, int, int, int);
 	std::string getName();
 	int getLevel();
 	int getStrength();
@@ -21,6 +21,7 @@ public:
 	int getMaxHealth();
 	int getCurrHealth();
 	int getCritRate();
+	bool isDead();
 	void setName(std::string);
 	void levelUp();
 	void setLevel(int);
@@ -29,5 +30,8 @@ public:
 	void setSpeed(int);
 	void setMaxHealth(int);
 	void setCurrHealth(int);
+	void takeDamage(int);
+	void recoverHealth(int);
+	void revive();
 	void setCritRate(int);
 };
