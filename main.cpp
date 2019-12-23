@@ -2,12 +2,14 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <string>
-#include "Hero.h"
-#include "Area.h"
+#include <ctype.h>
+#include "src/Hero.h"
+#include "src/Area.h"
 using namespace std;
 
-Area area;
-Hero hero;
+bool isDigit(string s) {
+	return s.length() == 1 && isdigit(s[0]);
+}
 
 void intro()
 {
@@ -76,12 +78,20 @@ void intro()
 	while (!validSelection)
 	{
 		validSelection = true;
-		cin >> selection;
 
-		if (cin.fail() || selection < 1 || selection > 6)
+		string buffer;
+		getline(cin, buffer);
+
+		if (!isDigit(buffer)) {
+			cout << "Invalid input received. Choose a number between 1 and 6." << endl;
+			validSelection = false;
+			continue;
+		}
+
+		selection = stoi(buffer);
+
+		if (selection < 1 || selection > 6)
 		{
-			cin.clear();
-			cin.ignore();
 			cout << "Invalid input received. Choose a number between 1 and 6." << endl;
 			validSelection = false;
 		}

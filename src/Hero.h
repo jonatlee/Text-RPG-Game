@@ -1,4 +1,4 @@
-#include<string>
+#include <string>
 #include "LevelableEntity.h"
 
 class Hero : LevelableEntity
