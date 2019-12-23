@@ -19,8 +19,7 @@ void intro()
 	cout << "tough decisions. You have been selected " << endl;
 	cout << "among various candidates to be accepted " << endl;
 	cout << "into the land, as you have a great      " << endl;
-	cout << "amount of potential to rise up and      " << endl;
-	cout << "achieve great things.                   " << endl;
+	cout << "potential to achieve amazing things!    " << endl;
 	cout << "----------------------------------------" << endl;
 	cout << "Young traveler, what is your name?      " << endl;
 
